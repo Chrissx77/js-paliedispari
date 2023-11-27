@@ -1,16 +1,15 @@
 const userNum = document.getElementById("userNum");
 const userChoice = document.getElementById("userChoice");
-const pcNum = randNum(1, 5);
-
-// const userNum = parseInt(prompt("Scegli un numero"));
-// const userChoice = prompt("Scegli pari o dispari");
+let pcNum;
+const result = document.getElementById("result");
 
 const buttonWin = document.getElementById("btnWin");
 buttonWin.addEventListener("click",
     function () {
-        whoWin(parseInt(userNum.value), userChoice.value, pcNum);
         console.log("user numero: ", userNum.value);
         console.log("user choice: ", userChoice.value);
+        pcNum = randNum(1, 5);
+        whoWin(parseInt(userNum.value), userChoice.value, pcNum);
     }
 )
 
@@ -25,18 +24,18 @@ function whoWin(numeroUser, sceltaUser, numeroPc) {
     console.log("pc num: ", pcNum);
     if (sum % 2 === 1) { //se dispari
         if (sceltaUser === "dispari") {
-            console.log("User vince");
+            result.innerHTML = "User vince";
         }
         else {
-            console.log("Pc vince")
+            result.innerHTML = "Pc vince";
         }
     }
     else { //se pari
         if (sceltaUser === "pari") {
-            console.log("User vince");
+            result.innerHTML = "User vince";
         }
         else {
-            console.log("Pc vince")
+            result.innerHTML = "Pc vince";
         }
     }
 }
