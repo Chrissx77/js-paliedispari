@@ -1,22 +1,49 @@
-const userWord = prompt("Inserisci una parola");
-let parolaInversa = reverseString(userWord);
-isPalindroma(userWord, parolaInversa);
+
+const userNum = document.getElementById("userNum");
+const userChoice = document.getElementById("userChoice");
+const pcNum = randNum(1, 5);
+
+// const userNum = parseInt(prompt("Scegli un numero"));
+// const userChoice = prompt("Scegli pari o dispari");
+
+const buttonWin = document.getElementById("btnWin");
+buttonWin.addEventListener("click",
+function(){
+    whoWin(parseInt(userNum.value), userChoice.value, pcNum);
+    console.log("user numero: ", userNum.value);
+    console.log("user choice: ", userChoice.value);
+}
+)
 
 
-function reverseString(string) {
-    const reverse = string.split('').reverse().join('');
-    return reverse;
+function randNum(min, max) {
+    let result = Math.floor(Math.random() * max - min) + min;
+    return result;
 }
 
 
-function isPalindroma(string1, string2) {
-    if (string1 === string2) {
-        console.log("E' Palindroma");
+function whoWin(numeroUser, sceltaUser, numeroPc) {
+    let sum = numeroUser + numeroPc;
+    console.log("Somma: ", sum);
+    console.log("pc num: ", pcNum);
+    if (sum % 2 === 1) { //se dispari
+        if (sceltaUser === "dispari") {
+            console.log("User vince");
+        }
+        else {
+            console.log("Pc vince")
+        }
     }
-    else {
-        console.log("Non è Palindroma");
+    else{ //se pari
+        if (sceltaUser === "pari") {
+            console.log("User vince");
+        }
+        else {
+            console.log("Pc vince")
+        }
     }
 }
+
 
 
 
