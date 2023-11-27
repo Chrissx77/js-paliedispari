@@ -1,6 +1,13 @@
-const userWord = prompt("Inserisci una parola");
-let parolaInversa = reverseString(userWord);
-isPalindroma(userWord, parolaInversa);
+const userWord = document.getElementById("userWord");
+const btn = document.getElementById("btn");
+const result = document.querySelector(".result");
+
+btn.addEventListener("click",
+    function(){
+        const stringUser = reverseString(userWord.value);
+        isPalindroma(userWord.value, stringUser);
+    }
+)
 
 
 function reverseString(string) {
@@ -8,15 +15,15 @@ function reverseString(string) {
     return reverse;
 }
 
-
 function isPalindroma(string1, string2) {
     if (string1 === string2) {
-        console.log("E' Palindroma");
+        result.innerHTML = "E' Palindroma";
     }
     else {
-        console.log("Non è Palindroma");
+        result.innerHTML = "Non è Palindroma";
     }
 }
+
 
 
 

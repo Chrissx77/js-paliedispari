@@ -1,4 +1,3 @@
-
 const userNum = document.getElementById("userNum");
 const userChoice = document.getElementById("userChoice");
 const pcNum = randNum(1, 5);
@@ -41,6 +40,3 @@ function whoWin(numeroUser, sceltaUser, numeroPc) {
         }
     }
 }
-
-
-
