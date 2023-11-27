@@ -8,19 +8,17 @@ const pcNum = randNum(1, 5);
 
 const buttonWin = document.getElementById("btnWin");
 buttonWin.addEventListener("click",
-function(){
-    whoWin(parseInt(userNum.value), userChoice.value, pcNum);
-    console.log("user numero: ", userNum.value);
-    console.log("user choice: ", userChoice.value);
-}
+    function () {
+        whoWin(parseInt(userNum.value), userChoice.value, pcNum);
+        console.log("user numero: ", userNum.value);
+        console.log("user choice: ", userChoice.value);
+    }
 )
-
 
 function randNum(min, max) {
     let result = Math.floor(Math.random() * max - min) + min;
     return result;
 }
-
 
 function whoWin(numeroUser, sceltaUser, numeroPc) {
     let sum = numeroUser + numeroPc;
@@ -34,7 +32,7 @@ function whoWin(numeroUser, sceltaUser, numeroPc) {
             console.log("Pc vince")
         }
     }
-    else{ //se pari
+    else { //se pari
         if (sceltaUser === "pari") {
             console.log("User vince");
         }
@@ -43,8 +41,6 @@ function whoWin(numeroUser, sceltaUser, numeroPc) {
         }
     }
 }
-
-
 
 
 
